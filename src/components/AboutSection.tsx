@@ -1,14 +1,16 @@
 import profileImage from "@/assets/profile.jpg";
-
 const AboutSection = () => {
-  const stats = [
-    { number: "5+", label: "Projects Completed" },
-    { number: "3+", label: "Years Experience" },
-    { number: "500+", label: "Problems Solved" },
-  ];
-
-  return (
-    <section id="about" className="py-20 px-6">
+  const stats = [{
+    number: "5+",
+    label: "Projects Completed"
+  }, {
+    number: "3+",
+    label: "Years Experience"
+  }, {
+    number: "500+",
+    label: "Problems Solved"
+  }];
+  return <section id="about" className="py-20 px-6">
       <div className="container mx-auto">
         {/* About Me Header */}
         <div className="text-center mb-16">
@@ -22,19 +24,14 @@ const AboutSection = () => {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-2xl p-8 text-center hover:bg-secondary transition-all duration-300"
-            >
+          {stats.map((stat, index) => <div key={index} className="bg-card rounded-2xl p-8 text-center hover:bg-secondary transition-all duration-300">
               <div className="text-4xl md:text-5xl font-bold text-portfolio-cyan mb-4">
                 {stat.number}
               </div>
               <div className="text-lg text-portfolio-text-muted">
                 {stat.label}
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* My Story Section */}
@@ -53,12 +50,9 @@ const AboutSection = () => {
                 my problem-solving skills and logical thinking.
               </p>
               
-              <p>
-                After building a strong foundation in algorithms and data 
-                structures, I explored mobile app development and later 
-                transitioned into full-stack web development. This allowed me 
-                to design and develop responsive, modern applications with
-              </p>
+              <p>After building a strong foundation in algorithms and data structures, I explored mobile app development and later transitioned into full-stack web development. This allowed me to design and develop responsive, modern applications with seamless user experiences and reliable backend systems.
+
+Currently, I am expanding my expertise in Machine Learning and Data Science, driven by a passion for creating intelligent, data-driven solutions. My focus is on combining practical software engineering skills with data-driven insights to build impactful applications that bridge technology and real-world needs</p>
             </div>
           </div>
 
@@ -66,18 +60,12 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 relative">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan/20 to-portfolio-cyan-glow/20 blur-2xl"></div>
-                <img
-                  src={profileImage}
-                  alt="About Rifat"
-                  className="w-full h-full rounded-full object-cover relative z-10"
-                />
+                <img src={profileImage} alt="About Rifat" className="w-full h-full rounded-full object-cover relative z-10" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
