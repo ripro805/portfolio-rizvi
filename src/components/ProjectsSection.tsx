@@ -89,9 +89,6 @@ const ProjectsSection = () => {
 
         {/* Other Projects */}
         {otherProjects.length > 0 && <div className="mb-16">
-            <h3 className="text-3xl font-bold mb-8 text-center">
-              Other <span className="text-portfolio-cyan"></span>
-            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
                   <div className="relative">
