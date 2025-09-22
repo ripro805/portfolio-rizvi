@@ -1,17 +1,43 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import riprocareImage from "@/assets/riprocare-project.jpg";
+import bmiCalculatorImage from "@/assets/bmi-calculator-project.jpg";
+import riprophonicImage from "@/assets/riprophonic-project.jpg";
 
 const ProjectsSection = () => {
-  const featuredProject = {
-    title: "RiproCare",
-    description: "Riprocare is an innovative healthcare app designed to simplify patient care and bridge the gap between individuals and medical professionals. It provides users with easy access to health records, appointment scheduling, medication reminders, and real-time health tips. The app aims to empower patients by keeping their medical data organized and accessible while ensuring seamless communication with doctors.",
-    image: riprocareImage,
-    technologies: ["JavaScript", "PostgreSQL"],
-    featured: true,
-    liveDemo: "#",
-    sourceCode: "#"
-  };
+  const projects = [
+    {
+      title: "RiproCare",
+      description: "Riprocare is an innovative healthcare app designed to simplify patient care and bridge the gap between individuals and medical professionals. It provides users with easy access to health records, appointment scheduling, medication reminders, and real-time health tips.",
+      image: riprocareImage,
+      technologies: ["JavaScript", "PostgreSQL"],
+      featured: true,
+      liveDemo: "#",
+      sourceCode: "#"
+    },
+    {
+      title: "BMICalculator",
+      description: "A lightweight and user-friendly mobile application designed to calculate Body Mass Index (BMI) and provide instant feedback on health categories such as underweight, healthy, overweight, and obese. Built with a clean interface for quick health insights.",
+      image: bmiCalculatorImage,
+      technologies: ["Kotlin"],
+      featured: false,
+      liveDemo: "#",
+      sourceCode: "#"
+    },
+    {
+      title: "RiproPhonic",
+      description: "Riprophonic is a sleek, user-friendly music application designed to bring an immersive listening experience to music lovers. It allows users to explore, organize, and enjoy their favorite tracks with an intuitive interface and smooth performance.",
+      image: riprophonicImage,
+      technologies: ["Kotlin"],
+      featured: true,
+      liveDemo: "#",
+      sourceCode: "#"
+    }
+  ];
+
+  const featuredProjects = projects.filter(project => project.featured);
+  const otherProjects = projects.filter(project => !project.featured);
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -26,71 +52,135 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Featured Project */}
-        <div className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Project Image */}
-            <div className="relative order-2 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden">
+        {/* Featured Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {featuredProjects.map((project, index) => (
+            <Card key={index} className="bg-card border-border/20 overflow-hidden">
+              <div className="relative">
                 <img
-                  src={featuredProject.image}
-                  alt={featuredProject.title}
-                  className="w-full h-auto object-cover"
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+                <div className="absolute top-4 left-4">
+                  <div className="inline-flex items-center px-3 py-1 bg-portfolio-cyan/10 border border-portfolio-cyan/20 rounded-full text-sm text-portfolio-cyan font-medium">
+                    Featured
+                  </div>
+                </div>
               </div>
-            </div>
-
-            {/* Project Details */}
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center px-3 py-1 bg-portfolio-cyan/10 border border-portfolio-cyan/20 rounded-full text-sm text-portfolio-cyan font-medium mb-6">
-                Featured
-              </div>
-              
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                {featuredProject.title}
-              </h3>
-              
-              <p className="text-lg text-portfolio-text-muted mb-8 leading-relaxed">
-                {featuredProject.description}
-              </p>
-              
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                {featuredProject.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-secondary rounded-lg text-sm text-portfolio-text-muted"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              {/* Project Links */}
-              <div className="flex gap-4">
-                <Button
-                  className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Live Demo
-                </Button>
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                  {project.title}
+                </h3>
                 
-                <Button
-                  variant="outline"
-                  className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background"
-                >
-                  <Github className="mr-2 h-4 w-4" />
-                  Source Code
-                </Button>
-              </div>
+                <p className="text-portfolio-text-muted mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+                
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-secondary rounded-lg text-sm text-portfolio-text-muted"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                {/* Project Links */}
+                <div className="flex gap-3">
+                  <Button
+                    className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow"
+                    size="sm"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </Button>
+                  
+                  <Button
+                    variant="outline"
+                    className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background"
+                    size="sm"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    Source Code
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Other Projects */}
+        {otherProjects.length > 0 && (
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center">
+              Other <span className="text-portfolio-cyan">Projects</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherProjects.map((project, index) => (
+                <Card key={index} className="bg-card border-border/20 overflow-hidden">
+                  <div className="relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <CardContent className="p-4">
+                    <h4 className="text-xl font-bold mb-3 text-foreground">
+                      {project.title}
+                    </h4>
+                    
+                    <p className="text-portfolio-text-muted mb-4 text-sm leading-relaxed">
+                      {project.description.length > 120 
+                        ? `${project.description.substring(0, 120)}...` 
+                        : project.description}
+                    </p>
+                    
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-2 py-1 bg-secondary rounded text-xs text-portfolio-text-muted"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Project Links */}
+                    <div className="flex gap-2">
+                      <Button
+                        className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow"
+                        size="sm"
+                      >
+                        <ExternalLink className="mr-1 h-3 w-3" />
+                        Demo
+                      </Button>
+                      
+                      <Button
+                        variant="outline"
+                        className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background"
+                        size="sm"
+                      >
+                        <Github className="mr-1 h-3 w-3" />
+                        Code
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
-        </div>
+        )}
 
         {/* More Projects Section */}
         <div className="text-center">
-          <div className="bg-card rounded-2xl p-12 mb-12">
+          <div className="bg-card rounded-2xl p-12">
             <h3 className="text-3xl font-bold mb-6">
               More <span className="text-portfolio-cyan">Projects</span>
             </h3>
