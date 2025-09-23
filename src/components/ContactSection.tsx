@@ -25,10 +25,11 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
-  // Initialize EmailJS (you'll need to replace these with your actual EmailJS credentials)
-  const SERVICE_ID = "YOUR_SERVICE_ID";
-  const TEMPLATE_ID = "YOUR_TEMPLATE_ID";  
-  const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+  // EmailJS Configuration - Replace with your actual EmailJS credentials
+  // Get these from your EmailJS dashboard: https://dashboard.emailjs.com/
+  const SERVICE_ID = "service_your_id"; // Your EmailJS service ID
+  const TEMPLATE_ID = "template_your_id"; // Your EmailJS template ID  
+  const PUBLIC_KEY = "your_public_key"; // Your EmailJS public key
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -45,16 +46,25 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // EmailJS template params
+      // Check if EmailJS is configured
+      if (SERVICE_ID === "service_your_id" || TEMPLATE_ID === "template_your_id" || PUBLIC_KEY === "your_public_key") {
+        throw new Error("EmailJS not configured. Please set up your EmailJS credentials.");
+      }
+
+      // Initialize EmailJS with your public key
+      emailjs.init(PUBLIC_KEY);
+      
+      // EmailJS template params - these variable names should match your EmailJS template
       const templateParams = {
         from_name: `${data.firstName} ${data.lastName}`,
         from_email: data.email,
         subject: data.subject,
         message: data.message,
-        to_name: "Rifat Rizvi", // Your name
+        to_name: "Rifat Rizvi",
+        reply_to: data.email,
       };
 
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
       
       toast({
         title: "Message sent successfully!",
