@@ -28,7 +28,7 @@ const ContactSection = () => {
   // EmailJS Configuration
   const SERVICE_ID = "service_0xwmyzv";
   const TEMPLATE_ID = "template_7ccw6e6";  
-  const PUBLIC_KEY = "service_0xwmyzv";
+  const PUBLIC_KEY = "92GuRLjQ43noEzNKl";
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
