@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Send, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -100,9 +100,10 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Facebook, label: "Facebook", href: "#" }
+    { icon: Github, label: "GitHub", href: "https://github.com/ripro805" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/md-rifat-islam-rizvi-9b5273328/" },
+    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/ripro.805/" },
+    { icon: GraduationCap, label: "ResearchGate", href: "https://www.researchgate.net/profile/Md-Rifat-Rizvi?ev=hdr_xprf" }
   ];
 
   return (
@@ -272,6 +273,8 @@ const ContactSection = () => {
                     <a
                       key={index}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center hover:bg-portfolio-cyan hover:text-background transition-all duration-300"
                       aria-label={social.label}
                     >
