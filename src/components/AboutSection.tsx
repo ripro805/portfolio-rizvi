@@ -51,7 +51,9 @@ const AboutSection = () => {
               </p>
               
               <p>After building a strong foundation in algorithms and data structures, I explored mobile app development and later transitioned into full-stack web development. This allowed me to design and develop responsive, modern applications with seamless user experiences and reliable backend systems. 
-Currently, I am expanding my expertise in Machine Learning and Data Science, driven by a passion for creating intelligent, data-driven solutions. My focus is on combining practical software engineering skills with data-driven insights to build impactful applications that bridge technology and real-world needs</p>
+
+
+ Currently, I am expanding my expertise in Machine Learning and Data Science, driven by a passion for creating intelligent, data-driven solutions. My focus is on combining practical software engineering skills with data-driven insights to build impactful applications that bridge technology and real-world needs</p>
             </div>
           </div>
 
