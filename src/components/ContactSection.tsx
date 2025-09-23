@@ -25,11 +25,10 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
-  // EmailJS Configuration - Replace with your actual EmailJS credentials
-  // Get these from your EmailJS dashboard: https://dashboard.emailjs.com/
-  const SERVICE_ID = "service_your_id"; // Your EmailJS service ID
-  const TEMPLATE_ID = "template_your_id"; // Your EmailJS template ID  
-  const PUBLIC_KEY = "your_public_key"; // Your EmailJS public key
+  // EmailJS Configuration
+  const SERVICE_ID = "service_0xwmyzv";
+  const TEMPLATE_ID = "template_7ccw6e6";  
+  const PUBLIC_KEY = "service_0xwmyzv";
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -46,11 +45,6 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Check if EmailJS is configured
-      if (SERVICE_ID === "service_your_id" || TEMPLATE_ID === "template_your_id" || PUBLIC_KEY === "your_public_key") {
-        throw new Error("EmailJS not configured. Please set up your EmailJS credentials.");
-      }
-
       // Initialize EmailJS with your public key
       emailjs.init(PUBLIC_KEY);
       
