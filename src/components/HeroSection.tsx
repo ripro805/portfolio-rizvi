@@ -75,7 +75,11 @@ const HeroSection = () => {
             <ChevronDown className="ml-2 h-5 w-5" />
           </Button>
           
-          <Button variant="outline" className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background font-medium px-8 py-3 text-lg">
+          <Button 
+            variant="outline" 
+            className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background font-medium px-8 py-3 text-lg"
+            onClick={() => window.open("https://docs.google.com/document/d/1p4T2bhn50Q3urxtszViynFN18NIDFNwMB_Ab6rCH7LA/edit?tab=t.0", "_blank")}
+          >
             <Download className="mr-2 h-5 w-5" />
             Download Resume
           </Button>
