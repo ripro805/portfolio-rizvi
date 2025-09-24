@@ -1,4 +1,4 @@
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/profile-about.png";
 const AboutSection = () => {
   const stats = [{
     number: "5+",
@@ -61,7 +61,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 relative">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan/20 to-portfolio-cyan-glow/20 blur-2xl"></div>
-                <img src={profileImage} alt="About Rifat" className="w-full h-full rounded-full object-cover relative z-10" />
+                <img src={profileImage} alt="About Rifat" className="w-full h-full rounded-full object-cover relative z-10 bg-white" />
               </div>
             </div>
           </div>
