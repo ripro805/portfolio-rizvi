@@ -7,35 +7,40 @@ const AchievementsSection = () => {
       title: "Pupil at Codeforces",
       username: "rifatrizvi2.o",
       description: "Active competitive programmer on Codeforces platform",
-      color: "text-purple-400"
+      color: "text-purple-400",
+      url: "https://codeforces.com/profile/rifatrizvi2.o"
     },
     {
       icon: Star,
       title: "2-Star Coder at CodeChef",
       username: "zest_fleck_20",
       description: "Achieved 2-star rating through consistent performance",
-      color: "text-yellow-400"
+      color: "text-yellow-400",
+      url: "https://www.codechef.com/users/zest_fleck_20"
     },
     {
       icon: CheckCircle,
       title: "47+ Problems Solved on LeetCode",
       username: "rifatrizvi2o",
       description: "Successfully solved diverse algorithmic challenges",
-      color: "text-green-400"
+      color: "text-green-400",
+      url: "https://leetcode.com/u/rifatrizvi2o/"
     },
     {
       icon: Trophy,
-      title: "50+ Problems Solved",
+      title: "50+ Problems Solved on Vjudge",
       username: "rifatrizvi2_o",
       description: "Solved challenging problems across multiple online judges",
-      color: "text-blue-400"
+      color: "text-blue-400",
+      url: "https://vjudge.net/group/xpsc-06-super-zone"
     },
     {
       icon: Code,
       title: "Active on AtCoder",
       username: "rifatrizvi2o",
       description: "Participating in AtCoder competitive programming contests",
-      color: "text-red-400"
+      color: "text-red-400",
+      url: "https://atcoder.jp/users/rifatrizvi2o"
     }
   ];
 
@@ -96,9 +101,14 @@ const AchievementsSection = () => {
                       {achievement.title}
                     </h3>
                     
-                    <p className="text-portfolio-cyan font-medium mb-4">
+                    <a
+                      href={achievement.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-portfolio-cyan font-medium mb-4 hover:text-portfolio-cyan-glow transition-colors duration-300 cursor-pointer block"
+                    >
                       {achievement.username}
-                    </p>
+                    </a>
                     
                     <p className="text-portfolio-text-muted">
                       {achievement.description}
