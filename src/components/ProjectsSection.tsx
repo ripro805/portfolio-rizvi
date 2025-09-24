@@ -11,24 +11,24 @@ const ProjectsSection = () => {
     image: riprocareImage,
     technologies: ["JavaScript", "PostgreSQL"],
     featured: true,
-    liveDemo: "#",
-    sourceCode: "#"
+    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7349841134015115264/",
+    sourceCode: "https://github.com/ripro805/Riprocaree"
   }, {
     title: "BMICalculator",
     description: "A lightweight and user-friendly mobile application designed to calculate Body Mass Index (BMI) and provide instant feedback on health categories such as underweight, healthy, overweight, and obese. Built with a clean interface for quick health insights.",
     image: bmiCalculatorImage,
     technologies: ["Kotlin"],
     featured: false,
-    liveDemo: "#",
-    sourceCode: "#"
+    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7370966538314743809/",
+    sourceCode: "https://github.com/ripro805/BMI-Calculator"
   }, {
     title: "RiproPhonic",
     description: "Riprophonic is a sleek, user-friendly music application designed to bring an immersive listening experience to music lovers. It allows users to explore, organize, and enjoy their favorite tracks with an intuitive interface and smooth performance.",
     image: riprophonicImage,
     technologies: ["Kotlin"],
     featured: true,
-    liveDemo: "#",
-    sourceCode: "#"
+    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7348087516383617025/",
+    sourceCode: "https://github.com/ripro805/Riprophonic"
   }];
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
@@ -73,12 +73,21 @@ const ProjectsSection = () => {
                 
                 {/* Project Links */}
                 <div className="flex gap-3">
-                  <Button className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" size="sm">
+                  <Button 
+                    className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" 
+                    size="sm"
+                    onClick={() => window.open(project.liveDemo, "_blank")}
+                  >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Live Demo
                   </Button>
                   
-                  <Button variant="outline" className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" size="sm">
+                  <Button 
+                    variant="outline" 
+                    className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" 
+                    size="sm"
+                    onClick={() => window.open(project.sourceCode, "_blank")}
+                  >
                     <Github className="mr-2 h-4 w-4" />
                     Source Code
                   </Button>
@@ -112,12 +121,21 @@ const ProjectsSection = () => {
                     
                     {/* Project Links */}
                     <div className="flex gap-2">
-                      <Button className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" size="sm">
+                      <Button 
+                        className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" 
+                        size="sm"
+                        onClick={() => window.open(project.liveDemo, "_blank")}
+                      >
                         <ExternalLink className="mr-1 h-3 w-3" />
                         Demo
                       </Button>
                       
-                      <Button variant="outline" className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" size="sm">
+                      <Button 
+                        variant="outline" 
+                        className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" 
+                        size="sm"
+                        onClick={() => window.open(project.sourceCode, "_blank")}
+                      >
                         <Github className="mr-1 h-3 w-3" />
                         Code
                       </Button>
@@ -138,7 +156,11 @@ const ProjectsSection = () => {
               simple landing pages to complex enterprise applications.
             </p>
             
-            <Button variant="outline" className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background px-8 py-3">
+            <Button 
+              variant="outline" 
+              className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background px-8 py-3"
+              onClick={() => window.open("https://github.com/ripro805?tab=repositories", "_blank")}
+            >
               <Github className="mr-2 h-5 w-5" />
               View All on GitHub
             </Button>
