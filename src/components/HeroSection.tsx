@@ -1,5 +1,5 @@
 import { Download, ChevronDown, MessageCircle } from "lucide-react";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/profile-new.png";
 import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -72,7 +72,7 @@ const HeroSection = () => {
         <div className="relative mb-8">
           <div className="w-48 h-48 mx-auto relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan to-portfolio-cyan-glow opacity-30 blur-xl"></div>
-            <img src={profileImage} alt="Md. Rifat Islam Rizvi" className="w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10" />
+            <img src={profileImage} alt="Md. Rifat Islam Rizvi" className="w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10 bg-white" />
           </div>
         </div>
 
