@@ -46,25 +46,28 @@ const AchievementsSection = () => {
 
   const certificates = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      category: "Cloud Computing",
-      date: "March 2024",
-      description: "Professional level certification for designing distributed systems on AWS"
+      title: "CodeChef 2★ Coder Rank",
+      issuer: "Phitron.io",
+      category: "Programming & Problem Solving",
+      date: "September 2025",
+      description: "Achieved outstanding results in CodeChef with 2 Star Coder Rank from Phitron Batch 6.",
+      url: "https://drive.google.com/file/d/1LdUNgHnXTNlSGCPvev31ySLdfniIu4II/view?usp=sharing"
     },
     {
       title: "Google Cloud Professional Developer",
       issuer: "Google Cloud",
       category: "Cloud Computing", 
       date: "January 2024",
-      description: "Professional certification for building scalable applications on Google Cloud"
+      description: "Professional certification for building scalable applications on Google Cloud",
+      url: "#"
     },
     {
       title: "React Developer Certification",
       issuer: "Meta",
       category: "Frontend Development",
       date: "December 2023", 
-      description: "Advanced React development concepts and best practices"
+      description: "Advanced React development concepts and best practices",
+      url: "#"
     }
   ];
 
@@ -165,9 +168,14 @@ const AchievementsSection = () => {
                     📅 Issued {cert.date}
                   </span>
                   
-                  <button className="text-portfolio-cyan hover:text-portfolio-cyan-glow transition-colors duration-300 text-sm font-medium">
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-portfolio-cyan hover:text-portfolio-cyan-glow transition-colors duration-300 text-sm font-medium"
+                  >
                     View Certificate ↗
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
