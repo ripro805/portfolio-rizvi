@@ -42,13 +42,7 @@ const AboutSection = () => {
             </h3>
             
             <div className="space-y-6 text-lg text-portfolio-text-muted leading-relaxed">
-              <p>
-                I began my journey with programming and competitive coding, 
-                solving problems across several online judges for almost two 
-                years. During this time, I became a Pupil on Codeforces and 
-                achieved a 2⭐ rating on CodeChef, which helped me sharpen 
-                my problem-solving skills and logical thinking.
-              </p>
+              <p>I began my journey with programming and competitive coding, solving problems across several online judges for almost two years. During this time, I became a Pupil on Codeforces and achieved a 2★  rating on CodeChef, which helped me sharpen my problem-solving skills and logical thinking.</p>
               
               <p>
                 After building a strong foundation in algorithms and data structures, I explored mobile app development and later transitioned into full-stack web development. This allowed me to design and develop responsive, modern applications with seamless user experiences and reliable backend systems.
