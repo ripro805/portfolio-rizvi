@@ -121,56 +121,123 @@ const ProjectsSection = () => {
 
         {/* Other Projects */}
         {otherProjects.length > 0 && <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherProjects.map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
-                  <div className="relative">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-48 object-cover cursor-pointer transition-transform hover:scale-105" 
-                      onClick={() => setSelectedImage(project.image)}
-                    />
-                  </div>
-                  <CardContent className="p-4">
-                    <h4 className="text-xl font-bold mb-3 text-foreground">
+            {/* BMI Calculator - Special Horizontal Layout */}
+            {otherProjects.filter(p => p.title === "BMICalculator").map((project, index) => (
+              <Card key={index} className="bg-card border-border/20 overflow-hidden mb-12">
+                <div className="flex flex-col lg:flex-row items-center gap-8 p-8">
+                  {/* Project Content */}
+                  <div className="flex-1 space-y-6">
+                    <h3 className="text-3xl lg:text-4xl font-bold text-foreground">
                       {project.title}
-                    </h4>
+                    </h3>
                     
-                    <p className="text-portfolio-text-muted mb-4 text-sm leading-relaxed">
-                      {project.description.length > 120 ? `${project.description.substring(0, 120)}...` : project.description}
+                    <p className="text-portfolio-text-muted text-lg leading-relaxed">
+                      {project.description}
                     </p>
                     
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, techIndex) => <span key={techIndex} className="px-2 py-1 bg-secondary rounded text-xs text-portfolio-text-muted">
+                    <div className="flex flex-wrap gap-3">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          className="px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-portfolio-text-muted"
+                        >
                           {tech}
-                        </span>)}
+                        </span>
+                      ))}
                     </div>
                     
                     {/* Project Links */}
-                    <div className="flex gap-2">
+                    <div className="flex gap-4 pt-4">
                       <Button 
-                        className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" 
-                        size="sm"
+                        className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow shadow-lg hover:shadow-portfolio-cyan/25 transition-all duration-300" 
+                        size="lg"
                         onClick={() => window.open(project.liveDemo, "_blank")}
                       >
-                        <ExternalLink className="mr-1 h-3 w-3" />
-                        Demo
+                        <ExternalLink className="mr-2 h-5 w-5" />
+                        Live Demo
                       </Button>
                       
                       <Button 
                         variant="outline" 
-                        className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" 
-                        size="sm"
+                        className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background shadow-lg transition-all duration-300" 
+                        size="lg"
                         onClick={() => window.open(project.sourceCode, "_blank")}
                       >
-                        <Github className="mr-1 h-3 w-3" />
-                        Code
+                        <Github className="mr-2 h-5 w-5" />
+                        Source Code
                       </Button>
                     </div>
-                  </CardContent>
-                </Card>)}
-            </div>
+                  </div>
+
+                  {/* Project Image */}
+                  <div className="flex-1 relative group">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-80 object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105" 
+                        onClick={() => setSelectedImage(project.image)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+
+            {/* Other Regular Projects Grid */}
+            {otherProjects.filter(p => p.title !== "BMICalculator").length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {otherProjects.filter(p => p.title !== "BMICalculator").map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
+                    <div className="relative">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-48 object-cover cursor-pointer transition-transform hover:scale-105" 
+                        onClick={() => setSelectedImage(project.image)}
+                      />
+                    </div>
+                    <CardContent className="p-4">
+                      <h4 className="text-xl font-bold mb-3 text-foreground">
+                        {project.title}
+                      </h4>
+                      
+                      <p className="text-portfolio-text-muted mb-4 text-sm leading-relaxed">
+                        {project.description.length > 120 ? `${project.description.substring(0, 120)}...` : project.description}
+                      </p>
+                      
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.map((tech, techIndex) => <span key={techIndex} className="px-2 py-1 bg-secondary rounded text-xs text-portfolio-text-muted">
+                            {tech}
+                          </span>)}
+                      </div>
+                      
+                      {/* Project Links */}
+                      <div className="flex gap-2">
+                        <Button 
+                          className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" 
+                          size="sm"
+                          onClick={() => window.open(project.liveDemo, "_blank")}
+                        >
+                          <ExternalLink className="mr-1 h-3 w-3" />
+                          Demo
+                        </Button>
+                        
+                        <Button 
+                          variant="outline" 
+                          className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" 
+                          size="sm"
+                          onClick={() => window.open(project.sourceCode, "_blank")}
+                        >
+                          <Github className="mr-1 h-3 w-3" />
+                          Code
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>)}
+              </div>
+            )}
           </div>}
 
         {/* More Projects Section */}
