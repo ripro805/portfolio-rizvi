@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import riprocareImage from "@/assets/riprocare-project-new.png";
-import bmiCalculatorImage from "@/assets/bmi-calculator-project.jpg";
+import bmiCalculatorImage from "@/assets/bmi-calculator-project-new.png";
 import riprophonicImage from "@/assets/riprophonic-project-new.png";
 import { useState } from "react";
 const ProjectsSection = () => {
@@ -110,7 +110,12 @@ const ProjectsSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
                   <div className="relative">
-                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-48 object-cover cursor-pointer transition-transform hover:scale-105" 
+                      onClick={() => setSelectedImage(project.image)}
+                    />
                   </div>
                   <CardContent className="p-4">
                     <h4 className="text-xl font-bold mb-3 text-foreground">
