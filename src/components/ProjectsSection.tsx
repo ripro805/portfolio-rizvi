@@ -1,10 +1,14 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import riprocareImage from "@/assets/riprocare-project.jpg";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import riprocareImage from "@/assets/riprocare-project-new.png";
 import bmiCalculatorImage from "@/assets/bmi-calculator-project.jpg";
 import riprophonicImage from "@/assets/riprophonic-project.jpg";
+import { useState } from "react";
 const ProjectsSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
   const projects = [{
     title: "RiproCare",
     description: "Riprocare is an innovative healthcare app designed to simplify patient care and bridge the gap between individuals and medical professionals. It provides users with easy access to health records, appointment scheduling, medication reminders, and real-time health tips.",
@@ -48,7 +52,12 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {featuredProjects.map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
               <div className="relative">
-                <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-64 object-cover cursor-pointer transition-transform hover:scale-105" 
+                  onClick={() => setSelectedImage(project.image)}
+                />
                 <div className="absolute top-4 left-4">
                   <div className="inline-flex items-center px-3 py-1 bg-portfolio-cyan/10 border border-portfolio-cyan/20 rounded-full text-sm text-portfolio-cyan font-medium">
                     Featured
@@ -166,6 +175,29 @@ const ProjectsSection = () => {
             </Button>
           </div>
         </div>
+
+        {/* Image Zoom Modal */}
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-4xl max-h-full">
+              <img 
+                src={selectedImage} 
+                alt="Zoomed project image" 
+                className="max-w-full max-h-full object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>;
 };
