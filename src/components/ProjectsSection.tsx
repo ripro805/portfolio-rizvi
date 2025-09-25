@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import riprocareImage from "@/assets/riprocare-project-new.png";
 import bmiCalculatorImage from "@/assets/bmi-calculator-project.jpg";
-import riprophonicImage from "@/assets/riprophonic-project.jpg";
+import riprophonicImage from "@/assets/riprophonic-project-new.png";
 import { useState } from "react";
 const ProjectsSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -176,24 +176,25 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Image Zoom Modal */}
+        {/* Image Zoom Modal with Lighting Effect */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative max-w-4xl max-h-full">
+            <div className="relative max-w-4xl max-h-full animate-scale-in">
+              <div className="absolute inset-0 bg-gradient-radial from-white/20 via-transparent to-transparent rounded-lg blur-xl"></div>
               <img 
                 src={selectedImage} 
                 alt="Zoomed project image" 
-                className="max-w-full max-h-full object-contain"
+                className="relative max-w-full max-h-full object-contain rounded-lg shadow-2xl shadow-portfolio-cyan/20"
                 onClick={(e) => e.stopPropagation()}
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors"
+                className="absolute -top-4 -right-4 bg-portfolio-cyan text-background rounded-full p-3 hover:bg-portfolio-cyan-glow transition-all duration-300 shadow-lg hover:shadow-portfolio-cyan/50"
               >
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               </button>
             </div>
           </div>
