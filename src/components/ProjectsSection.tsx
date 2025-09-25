@@ -48,61 +48,75 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Featured Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {featuredProjects.map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
-              <div className="relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-64 object-cover cursor-pointer transition-transform hover:scale-105" 
-                  onClick={() => setSelectedImage(project.image)}
-                />
-                <div className="absolute top-4 left-4">
-                  <div className="inline-flex items-center px-3 py-1 bg-portfolio-cyan/10 border border-portfolio-cyan/20 rounded-full text-sm text-portfolio-cyan font-medium">
-                    Featured
+        {/* Featured Projects - Horizontal Layout */}
+        <div className="space-y-12 mb-16">
+          {featuredProjects.map((project, index) => (
+            <Card key={index} className="bg-card border-border/20 overflow-hidden">
+              <div className={`flex flex-col lg:flex-row ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} items-center gap-8 p-8`}>
+                {/* Project Image */}
+                <div className="flex-1 relative group">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-80 object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105" 
+                      onClick={() => setSelectedImage(project.image)}
+                    />
+                    <div className="absolute top-4 left-4">
+                      <div className="inline-flex items-center px-4 py-2 bg-portfolio-cyan text-background rounded-full text-sm font-medium shadow-lg">
+                        Featured
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="flex-1 space-y-6">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-foreground">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-portfolio-text-muted text-lg leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-3">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-portfolio-text-muted"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Project Links */}
+                  <div className="flex gap-4 pt-4">
+                    <Button 
+                      className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow shadow-lg hover:shadow-portfolio-cyan/25 transition-all duration-300" 
+                      size="lg"
+                      onClick={() => window.open(project.liveDemo, "_blank")}
+                    >
+                      <ExternalLink className="mr-2 h-5 w-5" />
+                      Live Demo
+                    </Button>
+                    
+                    <Button 
+                      variant="outline" 
+                      className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background shadow-lg transition-all duration-300" 
+                      size="lg"
+                      onClick={() => window.open(project.sourceCode, "_blank")}
+                    >
+                      <Github className="mr-2 h-5 w-5" />
+                      Source Code
+                    </Button>
                   </div>
                 </div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
-                  {project.title}
-                </h3>
-                
-                <p className="text-portfolio-text-muted mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => <span key={techIndex} className="px-3 py-1 bg-secondary rounded-lg text-sm text-portfolio-text-muted">
-                      {tech}
-                    </span>)}
-                </div>
-                
-                {/* Project Links */}
-                <div className="flex gap-3">
-                  <Button 
-                    className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow" 
-                    size="sm"
-                    onClick={() => window.open(project.liveDemo, "_blank")}
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    className="border-portfolio-cyan text-portfolio-cyan hover:bg-portfolio-cyan hover:text-background" 
-                    size="sm"
-                    onClick={() => window.open(project.sourceCode, "_blank")}
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Source Code
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
 
         {/* Other Projects */}
