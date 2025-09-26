@@ -25,8 +25,36 @@ const Chatbot = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // OpenAI API key - In production, this should be handled securely via backend
-  const OPENAI_API_KEY = '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';
+  // Demo responses for portfolio showcase
+  const getDemoResponse = (message: string): string => {
+    const lowerMessage = message.toLowerCase();
+    
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+      return "Hello! Great to meet you! I'm Rifat, a passionate software developer. What would you like to know about my journey or projects?";
+    }
+    
+    if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
+      return "I've worked on several exciting projects! RiproCare is a healthcare platform I built with modern web technologies, RiproPhonic is a music streaming app using Kotlin, and I've created various web applications using React, JavaScript, and PostgreSQL. Which one interests you most?";
+    }
+    
+    if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech')) {
+      return "My tech stack includes JavaScript, Kotlin, React, PostgreSQL, and modern web frameworks. I'm currently expanding into Machine Learning and Data Science to build intelligent, data-driven solutions. I love staying updated with the latest technologies!";
+    }
+    
+    if (lowerMessage.includes('experience') || lowerMessage.includes('background')) {
+      return "I started with algorithms and data structures, then moved into mobile development with Kotlin, and later transitioned to full-stack web development. Now I'm exploring ML and Data Science to create impactful applications that solve real-world problems.";
+    }
+    
+    if (lowerMessage.includes('contact') || lowerMessage.includes('hire') || lowerMessage.includes('work together')) {
+      return "I'd love to discuss opportunities! You can reach me through the contact section below, or connect with me on LinkedIn. I'm always excited about new challenges and collaborative projects.";
+    }
+    
+    if (lowerMessage.includes('machine learning') || lowerMessage.includes('ml') || lowerMessage.includes('data science')) {
+      return "I'm currently diving deep into Machine Learning and Data Science! My goal is to combine my software engineering background with data-driven insights to build intelligent applications that can make real impact.";
+    }
+    
+    return "That's a great question! I'm passionate about software development and always eager to discuss technology, projects, or potential collaborations. Feel free to ask me anything about my experience, projects, or technical interests!";
+  };
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({
       behavior: 'smooth'
@@ -42,70 +70,31 @@ const Chatbot = () => {
   }, [isOpen, isMinimized]);
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
+    
     const userMessage: Message = {
       id: Date.now().toString(),
       content: inputMessage,
       isUser: true,
       timestamp: new Date()
     };
+    
     setMessages(prev => [...prev, userMessage]);
+    const currentMessage = inputMessage;
     setInputMessage('');
     setIsLoading(true);
-    try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${OPENAI_API_KEY}`
-        },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [{
-            role: 'system',
-            content: `You are Ripro, a passionate software developer. You should respond as if you ARE Ripro, not as an AI assistant helping someone learn about Ripro. Use first person ("I", "my", "me"). Here's your background:
-
-- You're a skilled developer with experience in JavaScript, Kotlin, PostgreSQL, and modern web technologies
-- You've built projects like RiproCare (healthcare platform), RiproPhonic (music app), and BMI Calculator
-- You're passionate about creating user-friendly applications and clean, efficient code
-- You're always eager to learn new technologies and take on challenging projects
-- You have experience with both mobile (Kotlin) and web development (JavaScript, React)
-- You enjoy solving real-world problems through code
-
-Be conversational, friendly, and speak as yourself. Share your experiences, thoughts, and passion for development. Don't mention that you're an AI - you ARE Ripro.`
-          }, ...messages.slice(-5).map(msg => ({
-            role: msg.isUser ? 'user' : 'assistant',
-            content: msg.content
-          })), {
-            role: 'user',
-            content: inputMessage
-          }],
-          max_tokens: 500,
-          temperature: 0.7
-        })
-      });
-      if (!response.ok) {
-        throw new Error('Failed to get response from OpenAI');
-      }
-      const data = await response.json();
+    
+    // Simulate API delay for realistic experience
+    setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: data.choices[0].message.content,
+        content: getDemoResponse(currentMessage),
         isUser: false,
         timestamp: new Date()
       };
+      
       setMessages(prev => [...prev, aiResponse]);
-    } catch (error) {
-      console.error('Error sending message:', error);
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content: "Sorry, I'm having trouble responding right now. Please try again later.",
-        isUser: false,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
       setIsLoading(false);
-    }
+    }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
   };
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
