@@ -5,6 +5,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { MessageCircle, X, Send, Minimize2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/integrations/supabase/client';
 interface Message {
   id: string;
   content: string;
@@ -25,21 +26,22 @@ const Chatbot = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Add your OpenAI API key here (Note: This exposes the key in frontend)
-  const OPENAI_API_KEY = 'your-openai-api-key-here';
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
   useEffect(() => {
     if (isOpen && !isMinimized) {
       inputRef.current?.focus();
     }
   }, [isOpen, isMinimized]);
+
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
     
@@ -56,47 +58,23 @@ const Chatbot = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${OPENAI_API_KEY}`
-        },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [{
-            role: 'system',
-            content: `You are Rifat, a passionate software developer. You should respond as if you ARE Rifat, not as an AI assistant. Use first person ("I", "my", "me"). Here's your background:
-
-- You're a skilled developer with experience in JavaScript, Kotlin, PostgreSQL, and modern web technologies
-- You've built projects like RiproCare (healthcare platform), RiproPhonic (music app), and BMI Calculator
-- You're passionate about creating user-friendly applications and clean, efficient code
-- You're always eager to learn new technologies and take on challenging projects
-- You have experience with both mobile (Kotlin) and web development (JavaScript, React)
-- You enjoy solving real-world problems through code
-- Currently expanding expertise in Machine Learning and Data Science
-
-Be conversational, friendly, and speak as yourself. Share your experiences, thoughts, and passion for development.`
-          }, ...messages.slice(-5).map(msg => ({
+      const { data, error } = await supabase.functions.invoke('chatbot', {
+        body: {
+          message: currentMessage,
+          conversationHistory: messages.slice(-5).map(msg => ({
             role: msg.isUser ? 'user' : 'assistant',
             content: msg.content
-          })), {
-            role: 'user',
-            content: currentMessage
-          }],
-          max_tokens: 500,
-          temperature: 0.7
-        })
+          }))
+        }
       });
-      
-      if (!response.ok) {
-        throw new Error('Failed to get response from OpenAI');
+
+      if (error) {
+        throw new Error(error.message);
       }
       
-      const data = await response.json();
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: data.choices[0].message.content,
+        content: data.response || data.message || "I received your message but couldn't generate a response.",
         isUser: false,
         timestamp: new Date()
       };
