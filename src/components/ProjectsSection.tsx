@@ -13,7 +13,7 @@ const ProjectsSection = () => {
     title: "RiproCare",
     description: "Riprocare is an innovative healthcare app designed to simplify patient care and bridge the gap between individuals and medical professionals. It provides users with easy access to health records, appointment scheduling, medication reminders, and real-time health tips.",
     image: riprocareImage,
-    technologies: ["JavaScript", "Java", "PostgreSQL"],
+    technologies: ["JavaScript", "PostgreSQL"],
     featured: true,
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7349841134015115264/",
     sourceCode: "https://github.com/ripro805/Riprocaree"

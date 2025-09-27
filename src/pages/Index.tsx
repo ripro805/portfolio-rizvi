@@ -5,7 +5,6 @@ import SkillsSection from "@/components/SkillsSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
-import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
       <AchievementsSection />
       <ProjectsSection />
       <ContactSection />
-      <Chatbot />
     </div>
   );
 };
