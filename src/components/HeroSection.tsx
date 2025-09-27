@@ -109,7 +109,7 @@ const HeroSection = () => {
             <img 
               src={processedImageSrc} 
               alt="Md. Rifat Islam Rizvi" 
-              className={`w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10 bg-white transition-opacity duration-300 ${
+              className={`w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10 transition-opacity duration-300 ${
                 isProcessing ? 'opacity-70' : 'opacity-100'
               }`}
             />
