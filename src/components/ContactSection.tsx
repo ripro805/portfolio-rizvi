@@ -83,18 +83,21 @@ const ContactSection = () => {
       icon: Mail,
       label: "Email",
       value: "rifatrizviofficial001@gmail.com",
+      href: "mailto:rifatrizviofficial001@gmail.com",
       color: "text-portfolio-cyan"
     },
     {
       icon: Phone,
       label: "Phone", 
       value: "+8801305612767",
+      href: "tel:+8801305612767",
       color: "text-portfolio-cyan"
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Kushtia, Bangladesh",
+      href: "https://www.google.com/maps/place/Kushtia+District/@23.9235906,89.1081489,16.03z/data=!4m6!3m5!1s0x39febca82f6a21ed:0x4040980d7c6874f8!8m2!3d23.8906995!4d89.1099368!16zL20vMDZqbDV4?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
       color: "text-portfolio-cyan"
     }
   ];
@@ -251,9 +254,14 @@ const ContactSection = () => {
                       <p className="text-sm text-portfolio-text-muted">
                         {item.label}
                       </p>
-                      <p className="text-foreground font-medium">
+                      <a 
+                        href={item.href}
+                        className="text-foreground font-medium hover:text-portfolio-cyan transition-colors duration-300 cursor-pointer"
+                        target={item.label === "Location" ? "_blank" : undefined}
+                        rel={item.label === "Location" ? "noopener noreferrer" : undefined}
+                      >
                         {item.value}
-                      </p>
+                      </a>
                     </div>
                   </div>
                 );
