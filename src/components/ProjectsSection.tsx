@@ -18,7 +18,7 @@ const ProjectsSection = () => {
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7349841134015115264/",
     sourceCode: "https://github.com/ripro805/Riprocaree"
   }, {
-    title: "BMICalculator",
+    title: "BloomWatch – Global Pollination Monitoring Platform",
     description: "BloomWatch is an interactive web application designed for monitoring flowering and pollination patterns worldwide. Inspired by the NASA Space Apps Challenge, it allows users to explore real-time data on crops and flowers, analyze pollinator activity, and make informed decisions based on local environmental conditions.",
     image: bmiCalculatorImage,
     technologies: ["Kotlin"],
