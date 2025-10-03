@@ -19,7 +19,7 @@ const ProjectsSection = () => {
     sourceCode: "https://github.com/ripro805/Riprocaree"
   }, {
     title: "BMICalculator",
-    description: "BloomWatch is an interactive web application designed for monitoring flowering and pollination patterns worldwide. Inspired by the NASA Space Apps Challenge, it allows users to explore real-time data on crops and flowers, analyze pollinator activity, and make informed decisions based on local environmental conditions. Key features include: Location-Based Dashboard with pollinator percentages and zone classification; Search & Analysis for crops and flowers with AI-based recommendations; Interactive Regional Map for visual zone displays; and Community Observations for collaborative dataset creation. BloomWatch combines scientific data, intuitive visualization, and community contributions to empower users with actionable insights for sustainable agriculture and biodiversity monitoring.",
+    description: "BloomWatch is an interactive web application designed for monitoring flowering and pollination patterns worldwide. Inspired by the NASA Space Apps Challenge, it allows users to explore real-time data on crops and flowers, analyze pollinator activity, and make informed decisions based on local environmental conditions.",
     image: bmiCalculatorImage,
     technologies: ["Kotlin"],
     featured: false,
