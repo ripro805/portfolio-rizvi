@@ -122,7 +122,7 @@ const ProjectsSection = () => {
         {/* Other Projects */}
         {otherProjects.length > 0 && <div className="mb-16">
             {/* BMI Calculator - Special Horizontal Layout */}
-            {otherProjects.filter(p => p.title === "BMICalculator").map((project, index) => (
+            {otherProjects.filter(p => p.title === "BloomWatch – Global Pollination Monitoring Platform").map((project, index) => (
               <Card key={index} className="bg-card border-border/20 overflow-hidden mb-12">
                 <div className="flex flex-col lg:flex-row items-center gap-8 p-8">
                   {/* Project Content */}
@@ -186,9 +186,9 @@ const ProjectsSection = () => {
             ))}
 
             {/* Other Regular Projects Grid */}
-            {otherProjects.filter(p => p.title !== "BMICalculator").length > 0 && (
+            {otherProjects.filter(p => p.title !== "BloomWatch – Global Pollination Monitoring Platform").length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {otherProjects.filter(p => p.title !== "BMICalculator").map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
+                {otherProjects.filter(p => p.title !== "BloomWatch – Global Pollination Monitoring Platform").map((project, index) => <Card key={index} className="bg-card border-border/20 overflow-hidden">
                     <div className="relative">
                       <img 
                         src={project.image} 
