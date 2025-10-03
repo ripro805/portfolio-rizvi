@@ -24,7 +24,7 @@ const ProjectsSection = () => {
     technologies: ["Kotlin"],
     featured: false,
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7370966538314743809/",
-    sourceCode: "https://github.com/ripro805/BMI-Calculator"
+    sourceCode: "https://github.com/ripro805/BloomWatch-Nasa-space-app-challenge-2025"
   }, {
     title: "RiproPhonic",
     description: "Riprophonic is a sleek, user-friendly music application designed to bring an immersive listening experience to music lovers. It allows users to explore, organize, and enjoy their favorite tracks with an intuitive interface and smooth performance.",
