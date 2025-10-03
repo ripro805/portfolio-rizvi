@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import riprocareImage from "@/assets/riprocare-project-new.png";
-import bmiCalculatorImage from "@/assets/bmi-calculator-project-new.png";
+import bloomwatchImage from "@/assets/bloomwatch-project.png";
 import riprophonicImage from "@/assets/riprophonic-project-new.png";
 import { useState } from "react";
 const ProjectsSection = () => {
@@ -20,7 +20,7 @@ const ProjectsSection = () => {
   }, {
     title: "BloomWatch – Global Pollination Monitoring Platform",
     description: "BloomWatch is an interactive web application designed for monitoring flowering and pollination patterns worldwide. Inspired by the NASA Space Apps Challenge, it allows users to explore real-time data on crops and flowers, analyze pollinator activity, and make informed decisions based on local environmental conditions.",
-    image: bmiCalculatorImage,
+    image: bloomwatchImage,
     technologies: ["Kotlin"],
     featured: false,
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7370966538314743809/",
