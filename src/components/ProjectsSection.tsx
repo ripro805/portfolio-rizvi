@@ -21,7 +21,7 @@ const ProjectsSection = () => {
     title: "BloomWatch – Global Pollination Monitoring Platform",
     description: "BloomWatch is an interactive web application designed for monitoring flowering and pollination patterns worldwide. Inspired by the NASA Space Apps Challenge, it allows users to explore real-time data on crops and flowers, analyze pollinator activity, and make informed decisions based on local environmental conditions.",
     image: bloomwatchImage,
-    technologies: ["Kotlin"],
+    technologies: ["TypeScript"],
     featured: false,
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7370966538314743809/",
     sourceCode: "https://github.com/ripro805/BloomWatch-Nasa-space-app-challenge-2025"
