@@ -23,7 +23,7 @@ const ProjectsSection = () => {
     image: bloomwatchImage,
     technologies: ["TypeScript"],
     featured: false,
-    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7370966538314743809/",
+    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7380513600857219072/",
     sourceCode: "https://github.com/ripro805/BloomWatch-Nasa-space-app-challenge-2025"
   }, {
     title: "RiproPhonic",
