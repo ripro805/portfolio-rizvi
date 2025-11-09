@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import riprocareImage from "@/assets/riprocare-project-new.png";
 import bloomwatchImage from "@/assets/bloomwatch-project.png";
-import riprophonicImage from "@/assets/riprophonic-project-new.png";
+import luxnestImage from "@/assets/luxnest-project.png";
 import { useState } from "react";
 const ProjectsSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
   }, {
     title: "LuxNest",
     description: "LuxNest is a full-stack hotel management web application developed using React.js, Node.js, and MySQL. It provides an intuitive platform for managing rooms, bookings, guests, and payments through a responsive and interactive dashboard. The system automates core hotel operations, improves efficiency, and delivers a seamless user experience for both staff and administrators.",
-    image: riprophonicImage,
+    image: luxnestImage,
     technologies: ["React", "Node.js", "MySQL"],
     featured: true,
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7393376909130170369/",
