@@ -27,7 +27,7 @@ const ProjectsSection = () => {
     sourceCode: "https://github.com/ripro805/BloomWatch-Nasa-space-app-challenge-2025"
   }, {
     title: "LuxNest",
-    description: "Riprophonic is a sleek, user-friendly music application designed to bring an immersive listening experience to music lovers. It allows users to explore, organize, and enjoy their favorite tracks with an intuitive interface and smooth performance.",
+    description: "LuxNest is a full-stack hotel management web application developed using React.js, Node.js, and MySQL. It provides an intuitive platform for managing rooms, bookings, guests, and payments through a responsive and interactive dashboard. The system automates core hotel operations, improves efficiency, and delivers a seamless user experience for both staff and administrators.",
     image: riprophonicImage,
     technologies: ["Kotlin"],
     featured: true,
