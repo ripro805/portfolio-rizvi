@@ -31,8 +31,8 @@ const ProjectsSection = () => {
     image: riprophonicImage,
     technologies: ["React", "Node.js", "MySQL"],
     featured: true,
-    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7348087516383617025/",
-    sourceCode: "https://github.com/ripro805/Riprophonic"
+    liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7393376909130170369/",
+    sourceCode: "https://github.com/ripro805/LuxNest-Smart-Hotel-Management-Web-App"
   }];
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
