@@ -29,7 +29,7 @@ const ProjectsSection = () => {
     title: "LuxNest",
     description: "LuxNest is a full-stack hotel management web application developed using React.js, Node.js, and MySQL. It provides an intuitive platform for managing rooms, bookings, guests, and payments through a responsive and interactive dashboard. The system automates core hotel operations, improves efficiency, and delivers a seamless user experience for both staff and administrators.",
     image: riprophonicImage,
-    technologies: ["Kotlin"],
+    technologies: ["React", "Node.js", "MySQL"],
     featured: true,
     liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7348087516383617025/",
     sourceCode: "https://github.com/ripro805/Riprophonic"
