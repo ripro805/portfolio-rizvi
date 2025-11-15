@@ -54,19 +54,12 @@ const AchievementsSection = () => {
       url: "https://drive.google.com/file/d/1LdUNgHnXTNlSGCPvev31ySLdfniIu4II/view?usp=sharing"
     },
     {
-      title: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      category: "Cloud Computing", 
-      date: "January 2024",
-      description: "Professional certification for building scalable applications on Google Cloud",
-      url: "#"
-    },
-    {
-      title: "React Developer Certification",
-      issuer: "Meta",
-      category: "Frontend Development",
-      date: "December 2023", 
-      description: "Advanced React development concepts and best practices",
+      title: "Excel Essentials for Workplace Productivity",
+      issuer: "Passport to Earning Bangladesh (under UNICEF & Generation Unlimited)",
+      category: "Professional Development",
+      date: "November 03, 2025",
+      recipient: "Md. Rifat Islam Rizvi",
+      description: "Comprehensive training in workplace Excel productivity and data management skills.",
       url: "#"
     }
   ];
