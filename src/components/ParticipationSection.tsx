@@ -7,30 +7,31 @@ const ParticipationSection = () => {
       event: "GSTU Programming Club Contest (Junior Category)",
       date: "August 2024",
       icon: Trophy,
-      highlight: "Secured top 5 position competing against talented junior programmers",
+      highlight: "Showcased problem-solving and algorithmic skills among junior-level coders",
       color: "text-yellow-500"
     },
     {
       placement: "31st Place",
       event: "SynergyX 2024 powered by Khulna University",
-      date: "2024",
+      date: "10 November 2024",
       team: "BSMRSTU_MICKY_MOUSE",
       icon: Code,
-      highlight: "Competed with university teams in a premier programming competition",
+      highlight: "Collaborated in a competitive coding environment, tackling real-world programming challenges",
       color: "text-blue-500"
     },
     {
       placement: "Participant",
-      event: "NASA Space App Challenge",
-      date: "2025",
+      event: "NASA Space App Challenge 2025",
+      date: "October 2025",
+      team: "Aqua Avenger",
       icon: Rocket,
-      highlight: "Collaborated on innovative space-themed solutions in a global hackathon",
+      highlight: "Contributed to innovative solutions in space and technology-themed problem statements",
       color: "text-purple-500"
     },
     {
       placement: "Participant",
       event: "NWU CSE FEST 2025 powered by North Western University, Khulna",
-      date: "2025",
+      date: "11 November 2025",
       team: "GSTU_Syntax_Samurais",
       icon: Users,
       highlight: "Participated as team lead in inter-university tech competition",
