@@ -20,6 +20,15 @@ const ParticipationSection = () => {
       color: "text-blue-500"
     },
     {
+      placement: "Top 100",
+      event: "Solvio AI Hackathon 2025",
+      date: "2025",
+      team: "Team Lead",
+      icon: Rocket,
+      highlight: "Led the development of an AI-driven, real-world problem-solving solution focused on innovation, practical impact, and effective execution in a nationwide hackathon",
+      color: "text-cyan-500"
+    },
+    {
       placement: "Participant",
       event: "NASA Space App Challenge 2025",
       date: "October 2025",
