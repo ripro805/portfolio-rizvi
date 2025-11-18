@@ -22,10 +22,10 @@ const ParticipationSection = () => {
     {
       placement: "Top 100",
       event: "Solvio AI Hackathon 2025",
-      date: "2025",
-      team: "Team Lead",
+      date: "18 November 2025",
+      team: "Syntax_Sammurais",
       icon: Rocket,
-      highlight: "Led the development of an AI-driven, real-world problem-solving solution focused on innovation, practical impact, and effective execution in a nationwide hackathon",
+      highlight: "Worked as Team Lead and UI/UX & Frontend Developer, leading the development of an AI-driven, real-world problem-solving solution focused on innovation, practical impact, and effective execution in a nationwide hackathon",
       color: "text-cyan-500"
     },
     {
