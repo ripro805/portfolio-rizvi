@@ -36,7 +36,8 @@ const ParticipationSection = () => {
       team: "Aqua Avenger",
       icon: Rocket,
       highlight: "Contributed to innovative solutions in space and technology-themed problem statements",
-      color: "text-purple-500"
+      color: "text-purple-500",
+      projectUrl: "https://www.linkedin.com/posts/md-rifat-islam-rizvi-9b5273328_nasaspaceapps-bloomwatch-innovation-activity-7380513600857219072-ZmTX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKe6NkBsGl0qxDhrlc5qEfL2h1x26xNKTI"
     },
     {
       placement: "Participant",
