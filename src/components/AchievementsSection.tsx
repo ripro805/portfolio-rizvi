@@ -54,6 +54,14 @@ const AchievementsSection = () => {
       url: "https://drive.google.com/file/d/1LdUNgHnXTNlSGCPvev31ySLdfniIu4II/view?usp=sharing"
     },
     {
+      title: "Introduction to 2D Animation",
+      issuer: "Grameenphone Academy",
+      category: "Creative Skills & Animation",
+      date: "November 21, 2025",
+      description: "Completed a certified training program on 2D Animation, covering animation principles, movement, timing, and storytelling. Awarded Certificate of Excellence.",
+      url: "https://drive.google.com/file/d/1tAlkRg578_acFiPk-N0k7zO3wbzjo-wg/view?usp=drive_link"
+    },
+    {
       title: "Excel Essentials for Workplace Productivity",
       issuer: "Passport to Earning Bangladesh (under UNICEF & Generation Unlimited)",
       category: "Professional Development",
