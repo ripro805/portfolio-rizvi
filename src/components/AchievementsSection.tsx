@@ -1,4 +1,5 @@
-import { Trophy, Star, CheckCircle, Award, Code } from "lucide-react";
+import { Trophy, Star, CheckCircle, Award, Code, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const AchievementsSection = () => {
   const competitiveProgramming = [
@@ -180,6 +181,24 @@ const AchievementsSection = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full"
+            >
+              <a
+                href="https://drive.google.com/drive/folders/1VhgdveqKXIybtdd70aBjfAOcN7TMbiEv?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                View All Certificates
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
