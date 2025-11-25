@@ -84,7 +84,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="relative group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-portfolio-cyan/20 via-cyan-500/30 to-portfolio-cyan/20 backdrop-blur-sm border-2 border-portfolio-cyan/50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-portfolio-cyan group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+            <div className="w-12 h-12 rounded-xl bg-white border-2 border-portfolio-cyan/50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-portfolio-cyan group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
               <span className="text-2xl font-black bg-gradient-to-br from-portfolio-cyan via-cyan-300 to-portfolio-cyan bg-clip-text text-transparent">
                 ℛ
               </span>
