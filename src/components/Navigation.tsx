@@ -83,8 +83,9 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-portfolio-cyan">
-            Portfolio
+          <div className="text-2xl font-bold">
+            <span className="text-portfolio-cyan">R</span>
+            <span className="text-foreground">ifat</span>
           </div>
 
           {/* Desktop Navigation */}
