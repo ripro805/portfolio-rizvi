@@ -83,10 +83,12 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="relative">
-            <span className="text-5xl font-black bg-gradient-to-br from-portfolio-cyan via-cyan-400 to-portfolio-cyan bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:drop-shadow-[0_0_25px_rgba(6,182,212,0.8)] transition-all duration-300">
-              R
-            </span>
+          <div className="relative group">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-portfolio-cyan/20 via-cyan-500/30 to-portfolio-cyan/20 backdrop-blur-sm border-2 border-portfolio-cyan/50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-portfolio-cyan group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+              <span className="text-2xl font-black bg-gradient-to-br from-portfolio-cyan via-cyan-300 to-portfolio-cyan bg-clip-text text-transparent">
+                R
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
