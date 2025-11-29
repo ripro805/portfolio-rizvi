@@ -1,11 +1,13 @@
-import { Download, ChevronDown, MessageCircle } from "lucide-react";
+import { Download, ChevronDown } from "lucide-react";
 import profileImage from "@/assets/profile-new.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { removeBackground, loadImage } from "@/utils/backgroundRemoval";
+import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
   const [processedImageSrc, setProcessedImageSrc] = useState<string>(profileImage);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const processImage = async () => {
@@ -36,21 +38,9 @@ const HeroSection = () => {
       }
     };
   }, []);
-  const scrollToProjects = () => {
-    const element = document.querySelector("#projects");
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  };
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+  
+  const goToProjects = () => {
+    navigate('/projects');
   };
   return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative">
       <div className="container mx-auto text-center">
@@ -86,7 +76,7 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button onClick={scrollToProjects} className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow font-medium px-8 py-3 text-lg">
+          <Button onClick={goToProjects} className="bg-portfolio-cyan text-background hover:bg-portfolio-cyan-glow font-medium px-8 py-3 text-lg">
             View My Work
             <ChevronDown className="ml-2 h-5 w-5" />
           </Button>
