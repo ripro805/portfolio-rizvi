@@ -46,7 +46,7 @@ const HeroSection = () => {
       <div className="container mx-auto text-center">
         {/* Profile Image */}
         <div className="relative mb-8">
-          <div className="w-60 h-60 mx-auto relative group">
+          <div className="w-56 h-56 mx-auto relative group">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan to-portfolio-cyan-glow opacity-40 blur-2xl group-hover:opacity-60 transition-opacity duration-300"></div>
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-portfolio-cyan relative z-10 bg-black">
               <img 
