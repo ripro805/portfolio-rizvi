@@ -1,4 +1,4 @@
-import { Code2, Globe, Database, Wrench } from "lucide-react";
+import { Code2, Globe, Database, Wrench, BarChart3 } from "lucide-react";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -21,10 +21,16 @@ const SkillsSection = () => {
       skills: ["MySQL", "MongoDB"]
     },
     {
+      title: "Data Analysis & Visualization",
+      icon: BarChart3,
+      iconColor: "text-cyan-400",
+      skills: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"]
+    },
+    {
       title: "Development Tools",
       icon: Wrench,
       iconColor: "text-orange-400",
-      skills: ["Git", "VS Code", "Docker", "GitHub"]
+      skills: ["Git", "VS Code", "Docker", "GitHub", "Proteus", "MS Office", "LaTeX"]
     }
   ];
 
@@ -42,7 +48,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
