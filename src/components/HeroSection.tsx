@@ -1,5 +1,5 @@
 import { Download, ChevronDown } from "lucide-react";
-import profileImage from "@/assets/profile-formal.jpg";
+import profileImage from "@/assets/profile-nobg.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { removeBackground, loadImage } from "@/utils/backgroundRemoval";
@@ -42,7 +42,7 @@ const HeroSection = () => {
   const goToProjects = () => {
     navigate('/projects');
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative pt-24">
+  return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative pt-24 bg-black">
       <div className="container mx-auto text-center">
         {/* Profile Image */}
         <div className="relative mb-8">
