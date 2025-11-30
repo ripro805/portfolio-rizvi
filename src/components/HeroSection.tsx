@@ -42,19 +42,21 @@ const HeroSection = () => {
   const goToProjects = () => {
     navigate('/projects');
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative pt-24 bg-black">
+  return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative pt-24 bg-gradient-to-b from-black via-background to-background">
       <div className="container mx-auto text-center">
         {/* Profile Image */}
         <div className="relative mb-8">
-          <div className="w-48 h-48 mx-auto relative group">
+          <div className="w-72 h-72 mx-auto relative group">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan to-portfolio-cyan-glow opacity-40 blur-2xl group-hover:opacity-60 transition-opacity duration-300"></div>
-            <img 
-              src={processedImageSrc} 
-              alt="Md. Rifat Islam Rizvi" 
-              className={`w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10 transition-all duration-300 group-hover:scale-105 ${
-                isProcessing ? 'opacity-70' : 'opacity-100'
-              }`}
-            />
+            <div className="w-full h-full rounded-full overflow-hidden border-4 border-portfolio-cyan relative z-10 bg-black">
+              <img 
+                src={processedImageSrc} 
+                alt="Md. Rifat Islam Rizvi" 
+                className={`w-full h-full object-cover object-center scale-110 transition-all duration-300 group-hover:scale-125 ${
+                  isProcessing ? 'opacity-70' : 'opacity-100'
+                }`}
+              />
+            </div>
           </div>
         </div>
 
