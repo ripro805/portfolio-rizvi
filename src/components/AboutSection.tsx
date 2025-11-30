@@ -1,4 +1,4 @@
-import profileImage from "@/assets/profile-about.png";
+import profileImage from "@/assets/profile-about.jpg";
 const AboutSection = () => {
   return <section id="about" className="py-20 px-6">
       <div className="container mx-auto">
