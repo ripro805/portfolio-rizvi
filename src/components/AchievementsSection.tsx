@@ -70,6 +70,15 @@ const AchievementsSection = () => {
       recipient: "Md. Rifat Islam Rizvi",
       description: "Comprehensive training in workplace Excel productivity and data management skills.",
       url: "#"
+    },
+    {
+      title: "Stepping into Data Analytics",
+      issuer: "Data Solution 360 (UNICEF GenU P2E Program)",
+      category: "Data Analytics & Business Intelligence",
+      date: "25 November 2025",
+      recipient: "Md. Rifat Islam Rizvi",
+      description: "Completed an intensive 5-day certified course covering Excel navigation, data cleaning, core and conditional functions, logical formulas, error handling, Pivot Tables, Charts, Slicers, Data Validation, and Excel Tables. Awarded Certificate of Excellence for outstanding performance.",
+      url: "https://drive.google.com/file/d/14wl40JQsjXTZDpm8S3nu7Z4nMtDKkyjm/view?usp=sharing"
     }
   ];
 
