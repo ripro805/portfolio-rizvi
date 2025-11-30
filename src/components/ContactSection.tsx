@@ -1,4 +1,16 @@
 import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Send, GraduationCap } from "lucide-react";
+
+// Custom Kaggle Icon Component
+const KaggleIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/>
+  </svg>
+);
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -106,7 +118,8 @@ const ContactSection = () => {
     { icon: Github, label: "GitHub", href: "https://github.com/ripro805" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/md-rifat-islam-rizvi-9b5273328/" },
     { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/ripro.805/" },
-    { icon: GraduationCap, label: "ResearchGate", href: "https://www.researchgate.net/profile/Md-Rifat-Rizvi?ev=hdr_xprf" }
+    { icon: GraduationCap, label: "ResearchGate", href: "https://www.researchgate.net/profile/Md-Rifat-Rizvi?ev=hdr_xprf" },
+    { icon: KaggleIcon, label: "Kaggle", href: "https://www.kaggle.com/rifatrizvi" }
   ];
 
   return (
@@ -283,7 +296,7 @@ const ContactSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center hover:bg-portfolio-cyan hover:text-background transition-all duration-300"
+                      className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center hover:bg-portfolio-cyan hover:text-background transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-portfolio-cyan/30"
                       aria-label={social.label}
                     >
                       <IconComponent className="h-6 w-6" />
