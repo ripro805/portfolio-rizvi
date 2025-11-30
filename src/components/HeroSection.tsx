@@ -1,5 +1,5 @@
 import { Download, ChevronDown } from "lucide-react";
-import profileImage from "@/assets/profile-new.png";
+import profileImage from "@/assets/profile-formal.jpg";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { removeBackground, loadImage } from "@/utils/backgroundRemoval";
@@ -42,16 +42,16 @@ const HeroSection = () => {
   const goToProjects = () => {
     navigate('/projects');
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative">
+  return <section id="home" className="min-h-screen flex items-center justify-center px-6 relative pt-24">
       <div className="container mx-auto text-center">
         {/* Profile Image */}
         <div className="relative mb-8">
-          <div className="w-48 h-48 mx-auto relative">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan to-portfolio-cyan-glow opacity-30 blur-xl"></div>
+          <div className="w-48 h-48 mx-auto relative group">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-portfolio-cyan to-portfolio-cyan-glow opacity-40 blur-2xl group-hover:opacity-60 transition-opacity duration-300"></div>
             <img 
               src={processedImageSrc} 
               alt="Md. Rifat Islam Rizvi" 
-              className={`w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10 transition-opacity duration-300 ${
+              className={`w-full h-full rounded-full object-cover border-4 border-portfolio-cyan relative z-10 transition-all duration-300 group-hover:scale-105 ${
                 isProcessing ? 'opacity-70' : 'opacity-100'
               }`}
             />
